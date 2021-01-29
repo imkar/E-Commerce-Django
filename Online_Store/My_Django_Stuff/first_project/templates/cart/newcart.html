@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--For header and footer only remove later-->
+    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/css/mdb.min.css" rel="stylesheet">
+        <!-- MDBootstrap Steppers Pro  -->
+    <!-- <link href="css/addons-pro/steppers.min.css" rel="stylesheet"> -->
+    <!--Custom Style Sheet-->
+    <link rel="stylesheet" href="{% static 'cart/newcart.css' %}">
+
+
+
+
+
+</head>
+<body>
+
+
+{% include 'last_header.html'%}
+    <main>
+    <!-- Steps form -->
+    <div class="card">
+        <div class="card-body mb-4">
+
+            <!-- Stepper -->
+            <div class="steps-form col-md-8 offset-md-2">
+                <div class="steps-row setup-panel">
+                    <div class="steps-step">
+                        <a href="#step-9" type="button" class="btn step-button-active btn-circle"><i class="fas fa-shopping-cart"></i></a>
+
+                    </div>
+                    <div class="steps-step">
+                        <a href="#step-10" type="button" class="btn step-button btn-circle" disabled="disabled"><i class="fas fa-dolly-flatbed"></i></a>
+
+                    </div>
+                    <div class="steps-step">
+                        <a href="#step-11" type="button" class="btn step-button btn-circle" disabled="disabled"><i class="fas fa-credit-card"></i></a>
+
+                    </div>
+                    <div class="steps-step">
+                        <a href="#step-12" type="button" class="btn step-button btn-circle" disabled="disabled"><i class="fas fa-credit-card"></i></a>
+
+                    </div>
+                </div>
+            </div>
+
+            <form role="form" action="" method="post">
+                {% if cart.products.exists %}
+                <!-- First Step -->
+                <div class="row setup-content" id="step-9">
+                    <div class="first-page col-md-6 offset-md-3">
+                        <h3 class="pl-0 my-5">SHOPPING CART</h3>
+                        {% for product in cart.products.all %}
+                        <div class="row item">
+
+
+
+                            <div class="buttons col-md-1 col-1">
+                              <form class="form" method='POST' action='{% url "delitem" product.id %}'> {% csrf_token %}
+                                <input type="hidden" name="hope" value="{{ product.id }}">
+                              <button type="submit" class="fas fa-times" ></button>
+                              <!-- <i class="fas fa-times"></i> -->
+                              </form>
+                            </div>
+
+                            <div class="col-3 col-md-4">
+                              <img class="productimage" src="{{ product.image_of_product.url }}" alt="" />
+                            </div>
+
+                            <div class="description col-md-3 col-4">
+                              <span>{{ product.name }}</span></br>
+                              <span>{{ product.description }}</span></br>
+                              <!-- <span>White</span> -->
+                            </div>
+
+                            <div class="quantity col-md-2 col-3">
+                              <div class="row q-row">
+                                <i class="fas fa-plus"></i>
+                                <p class=quant>{{ product.quantity }}</p>
+                                <i class="fas fa-minus"></i>
+
+                              </div>
+                            </div>
+
+                            <div class="price col-md-2 col-1">
+                                <p class="total-price">${{ product.price }}</p>
+                            </div>
+
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <!-- <div class="row item">
+
+                            <div class="buttons col-md-1 col-1">
+                              <i class="fas fa-times"></i>
+                            </div>
+
+                            <div class="col-3 col-md-4">
+                              <img class="productimage" src="./images/Cilt Bakımı/face tonic02.jpg" alt="" />
+                            </div>
+
+                            <div class="description col-md-3 col-4">
+                              <span>Common Projects</span></br>
+                              <span>Bball High</span></br>
+                              <span>White</span>
+                            </div>
+
+                            <div class="quantity col-md-2 col-3">
+                              <div class="row q-row">
+                                <i class="fas fa-plus"></i>
+                                <p class=quant>1</p>
+                                <i class="fas fa-minus"></i>
+
+                              </div>
+                            </div>
+
+                            <div class="price col-md-2 col-1">
+                                <p class="total-price">$549</p>
+                            </div>
+
+                        </div> -->
+                        <p>NO product</p>
+                        {% endif%}
+                        <button class="btn step-button-active btn-rounded nextBtn float-right" type="button">Next</button>
+                    </div>
+
+                </div>
+
+                <!-- Second Step -->
+                <div class="row setup-content" id="step-10">
+                    <div class="second-step col-md-6 offset-md-3">
+                        <h3 class="pl-0 my-4">ADDRESS</h3>
+                        <div class="form-group md-form">
+                            <label for="companyName" data-error="wrong" data-success="right">Company Name</label>
+                            <input id="companyName" type="text" required="required" class="form-control validate">
+                        </div>
+                        <div class="form-group md-form mt-3">
+                            <label for="companyAddress" data-error="wrong" data-success="right">Company Address</label>
+                            <input id="companyAddress" type="text" required="required" class="form-control validate">
+                        </div>
+                        <button class="btn step-button-active btn-rounded prevBtn float-left" type="button">Previous</button>
+                        <button class="btn step-button-active btn-rounded nextBtn float-right" type="button">Next</button>
+                    </div>
+                </div>
+
+                <!-- Third Step -->
+                <div class="row setup-content col-md-6 offset-md-3" id="step-11">
+                    <div class="col-md-12">
+                        <h3 class="pl-0 my-4">PAYMENT</h3>
+
+                        <div class="page">
+                            <div class="page__demo">
+                              <form class="payment-card">
+                                <div class="payment-card__front">
+                                  <div class="payment-card__group">
+                                    <label class="payment-card__field">
+                                      <span class="payment-card__hint">Holder of card</span>
+                                      <input class="payment-card__input" placeholder="Holder of card" pattern="[A-Za-z, ]{2,}" name="holder-card" required>
+                                    </label>
+                                  </div>
+                                  <div class="payment-card__group">
+                                    <label class="payment-card__field">
+                                      <span class="payment-card__hint">Number of card</span>
+                                      <input type="text" class="payment-card__input" placeholder="Number of card" pattern="[0-9]{16}" name="number-card" required>
+                                    </label>
+                                  </div>
+                                  <div class="payment-card__group">
+                                    <span class="payment-card__caption">valid thru</span>
+                                  </div>
+                                  <div class="payment-card__group payment-card__footer">
+                                    <label class="payment-card__field payment-card__month">
+                                      <span class="payment-card__hint">Month</span>
+                                      <input type="text" class="payment-card__input" placeholder="MM" maxlength="2" pattern="[0-9]{2}" name="mm-card" required>
+                                    </label>
+                                    <span class="payment-card__separator">/</span>
+                                    <label class="payment-card__field payment-card__year">
+                                      <span class="payment-card__hint">Year</span>
+                                      <input type="text" class="payment-card__input" placeholder="YY" maxlength="2" pattern="[0-9]{2}" name="year-card" required>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="payment-card__back">
+                                  <div class="payment-card__group">
+                                    <label class="payment-card__field payment-card__cvc">
+                                      <span class="payment-card__hint">CVC</span>
+                                      <input type="text" class="payment-card__input" placeholder="CVC" maxlength="3" pattern="[0-9]{3}" name="cvc-card" required>
+                                    </label>
+                                  </div>
+                                </div>
+                                </div>
+                              <button class="payment-card__button" hidden>Send</button>
+                              </form>
+                          </div>
+                        <button class="btn step-button-active btn-rounded prevBtn float-left" type="button">Previous</button>
+                        <button class="btn step-button-active btn-rounded nextBtn float-right" type="button">Submit</button>
+                    </div>
+                </div>
+
+                <!--Forth Step -->
+                <div class="row setup-content" id="step-12">
+                    <div class="last-step col-md-6 offset-md-3">
+                       <p>Your invoice has sent!</p>
+
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <!-- Steps form -->
+    </main>
+   {% include 'footer.html' %}
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/js/mdb.min.js"></script>
+    <!-- MDBootstrap Steppers Pro  -->
+    <!-- <script type="text/javascript" src="js/addons-pro/steppers.min.js"></script> -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-modal/1.6.5/index.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
+    <script src="{% static 'cart/newcart.js'%}"></script>
+</body>
+</html>

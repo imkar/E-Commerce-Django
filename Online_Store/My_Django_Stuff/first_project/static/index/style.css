@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300&display=swap');
+
+:root{
+    --pink: #cba6a6 ;
+    --yellow: #d2c5a1;
+    --orange: #deb597 ;
+    --blue: #a9bbc9 ;
+    --green: #b9c9a9 ;
+    --background-color: #f2e9e2 ;
+    --opensans-condensed: 'Open Sans Condensed', sans-serif ;
+    --opensans: 'Open Sans', sans-serif;
+}
+ 
+header{
+    font-family: var(--opensans-condensed);
+    vertical-align: baseline;
+}
+
+.row{
+    background-color: var(--background-color);
+
+}
+
+.text-left{
+    padding-left: 3.3em;
+}
+.site-title{
+    
+    font-size: 3em;
+    letter-spacing : 0.2em;
+    color:white;
+}
+
+.icons{
+    padding-right: 0.5em;
+    padding-top: 2rem;
+}
+
+ul{
+    margin:0;
+    color: white;
+}
+
+li{
+    list-style: none;
+    float: right;
+    padding: 0.7em;
+}
+
+.btn-group{
+    
+    padding-top: 0.7rem;
+    float: right;
+}
+
+.container.dropdown-toggle,
+.container.dropdown-item{
+    font-size: 0.5em;
+}
+
+.nav-item{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.nav-link{
+    font-size: 1.2em;
+    letter-spacing : 0.1em;
+    color: var(--pink);
+}
+
+li a:hover, nav-item:hover .navlink{
+    background-color: var(--background-color);
+    color: var(--pink);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+.dropdown-content a {
+    color: var(--pink);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+.dropdown-content a:hover {
+      background-color: var(--background-color);
+}
+  
+.nav-item:hover .dropdown-content {
+    display: block;
+  }
+
+  /*main*/
+
+.site-slider{
+    position:relative;
+    padding-bottom: 2em;
+}
+
+.position-top{
+    position: absolute;
+    top: 45%;
+}
+
+.prev,.next{
+    background-color: var(--background-color) ;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    color:white;
+    margin: 0 1rem;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.site-slider:hover .prev,.site-slider:hover .next{
+    opacity: 1;
+}
+
+.left-0{
+    left:0;
+}
+
+.right-0{
+    right: 0 ;
+}
+
+.slick-dots{
+    list-style: none;
+    display: flex;
+    justify-content:center;
+    margin: 0;
+    padding: 1rem 0;
+    position: absolute;
+    bottom:0;
+    right: 45%;
+
+}
+
+.slick-dots li{
+    margin: 0 0.rem;
+}
+
+.slick-dots button{
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    padding: 0.2rem;
+    border: none;
+    background-color: var(--background-color);
+    text-indent: -99999px;
+    border-radius: 100%;
+}
+
+.slick-dots li.slick-active button{
+    transform: scale(2.5);
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.205);
+}
+
+/**footer*/
+
+footer{
+    background-color: var(--background-color);
+    font-family: var(--opensans-condensed);
+    padding: 60px 0;
+}
+
+.footer-container{
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+.left-col{
+    padding-left: 2em;
+}
+
+.left-col .site-title{
+    padding-left: 0;
+}
+.left-col p{
+    color: var(--pink);
+}
+.social-media{
+    margin: 20px 0;
+}
+
+.social-media a{
+    color: white;
+    margin-right: 25px;
+    font-size: 22px;
+    text-decoration: none;
+    transition: .3s linear;
+}
+
+.social-media a:hover{
+    color: var(--pink);
+}
+
+.right-col{
+    padding-right: 15%;
+}
+.right-col h1{
+    font-size: 1.8em;
+}
+
+.border{
+    width: 11rem;
+    height: 0.15rem;
+    background: var(--pink);
+}
+.newsletter-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.txtb{
+    flex:1;
+    padding: 10px 35px;
+    font-size: 16px;
+    
+    border:none;
+    font-weight: 700;
+    background-color:var(--pink) ;
+}
+::placeholder{
+    color: var(--background-color);
+}
+
+.submit-btn{
+    padding: 10px 35px;
+    font-size: 16px;
+    color: var(--background-color);
+    border:none;
+    font-weight: 700;
+    background-color: var(--pink);
+    margin-left: 1em;
+}
+.submit-btn:hover{
+    opacity: 0.7;
+}
+
+.right-col p{
+    color: var(--pink);
+}
+.right-col h1{
+    color: var(--pink);
+}

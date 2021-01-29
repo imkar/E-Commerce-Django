@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adresses</title>
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Font Awesome CDN-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+
+    <!--Custom Style Sheet-->
+    <link rel="stylesheet" href="./header.css">
+
+    <script type="text/javascript">
+
+        function toggle_visibility(id) {
+            var e = document.getElementById(id);
+            if(e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
+        }
+
+    </script>
+
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Font Awesome CDN-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+
+    <!--Custom Style Sheet-->
+    <link rel="stylesheet" href="./footer.css">
+
+</head>
+<body>
+
+<header>
+    <div class="container-fluid">
+
+        <div class="row header-row">
+            <div class="col-md-4 col-2 text-left">
+                <h2 class="my-md-3 site-title">nuance</h2>
+            </div>
+
+            <div class="search-container col-8 col-md-4">
+                <div class="search-box">
+                    <div class="search-icon"><i class="fa fa-search search-icon fa-sm"></i></div>
+                    <form action="" class="search-form">
+                        <input type="text" placeholder="Search" id="search" autocomplete="off">
+                    </form>
+                    <svg class="search-border" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;"
+                         xml:space="preserve">
+                      <path class="border" d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"/>
+                        <path class="border" d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"/>
+                    </svg>
+                    <div class="go-icon"><i class="fa fa-arrow-right fa-sm"></i></div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-2 float-left head-rightContent">
+
+
+                <div class= "right-col">
+
+                    <ul class=icons>
+
+
+                        <li class="shopping-basket lie">
+
+                            <a href="javascript:void(0)" onclick="toggle_visibility('shopping-popup');">
+                                <i class="fas fa-shopping-cart fa-lg"></i>
+                            </a>
+                        </li>
+
+
+                        <li class="profil" tabindex="0">
+
+                            <div class="user_section" id="user">
+                                <a href="">
+                                    <i class="far fa-user fa-lg"></i>
+                                </a>
+
+                            </div>
+                            <div class="user_container">
+                                <div class="user_info col-4 col-md-4 offset-md-">
+
+                                    <h3>Begüm Çelik</h3>
+
+                                    <p><a href="#">Your Account</a></p>
+                                    <p><a href="#">Previous Orders</a></p>
+                                    <p><a href="#">Logout</a></p>
+
+
+                                </div>
+                            </div>
+
+
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle my-md-4 my-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD</button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">EUR</a>
+                        <a href="#" class="dropdown-item">TL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="shopping-popup" class="bg-modal wrapper">
+    <div class="container modal-content">
+        <div class="closing">
+            <a href="javascript:void(0)" onclick="toggle_visibility('shopping-popup');">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+        <h3>SHOPPING CART</h3>
+
+        <div class="row item-row">
+            <div class="buttons">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <div class="productimage">
+                <img class="productimage" src="./images/Banner/Cilt Bakımı/face tonic02.jpg" alt="" />
+            </div>
+
+            <div class="description">
+                <span>Common Projects</span></br>
+                <span>Bball High</span></br>
+
+            </div>
+
+            <div class="quantity">
+                <div class="row q-row">
+                    <i class="fas fa-plus"></i>
+                    <p class=quant>1</p>
+                    <i class="fas fa-minus"></i>
+
+                </div>
+            </div>
+
+            <div class="price">
+                <p class="total-price">$549</p>
+            </div>
+        </div>
+        <hr style="width:400px; margin: auto;"></hr>
+        <div class="row item-row">
+            <div class="buttons">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <div class="productimage">
+                <img class="productimage" src="./images/Banner/Cilt Bakımı/face tonic02.jpg" alt="" />
+            </div>
+
+            <div class="description">
+                <span>Common Projects</span></br>
+                <span>Bball High</span></br>
+
+            </div>
+
+            <div class="quantity">
+                <div class="row q-row">
+                    <i class="fas fa-plus"></i>
+                    <p class=quant>1</p>
+                    <i class="fas fa-minus"></i>
+
+                </div>
+            </div>
+
+            <div class="price">
+                <p class="total-price">$549</p>
+            </div>
+        </div>
+
+        <h5>Total Price</h5>
+        <h6>$549</h6>
+
+        <!--
+        <div class="empty-card">
+          <p>YOUR SHOPPING CART IS EMPTY</p>
+        </div>
+        -->
+        <i class="fas fa-shopping-cart"></i>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="jquery.js"></script>
+<script src="./js/header.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<style>
+    .submit-btn-adr{
+        padding: 10px 35px;
+        font-size: 16px;
+        color: var(--background-color);
+        border:none;
+        font-weight: 700;
+        background-color: var(--pink);
+        margin-left: 130%;
+    }
+    .submit-btn-adr:hover{
+        opacity: 0.7;
+    }
+</style>
+
+<font style="font-family: var(--opensans-condensed); font-size: 20px;">
+
+    <div class='form' style="margin-top: 50px; margin-bottom: 20px;">
+        <div class="card" style="width: 48%; height: 60%;  margin-left: 25%; background-color: var(--background-color);">
+
+            <h2 style="margin-left: 48%; margin-top: 5%; margin-bottom: 2%;">Reviews</h2>
+
+            <div class="card-body">
+                <table style="margin-left: 20%;">
+                    <tr>
+                        <td>
+                            <a>Name</a>
+                        </td>
+                        <td>
+                            <input style="margin-left: 5px;" size="50" type="text" id="name">
+                        </td>
+                    </tr>
+                    <tr style="height: 20px;"></tr>
+                    <tr>
+                        <td>
+                            <a>Date</a>
+                        </td>
+                        <td>
+                            <input style="margin-left: 28%;" type="date" id="date" />
+                        </td>
+                    </tr>
+                    <tr style="height: 20px;"></tr>
+                    <tr>
+                        <td>
+                            <a>Comment</a>
+                        </td>
+                        <td>
+                            <textarea style="margin-left: 5px;" rows="3" cols="50" id="bodyText"></textarea>
+                        </td>
+                    </tr>
+                    <tr style="height: 30px;"></tr>
+                    <tr>
+                        <td>
+                            <input type="button" class="submit-btn-adr" id="addComent" value="Add Comment">
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        <!--
+        <h5>Add Comments</h5> Name:
+        <input type="text" id="name">
+        <br/>
+        <br /> Date:
+        <input type="date" id="date" />
+        <br/>
+        <br /> Body:
+        <textarea rows="5" col="30" id="bodyText"></textarea>
+        <br />
+        <br />
+        <input type="button" id="addComent" value="Add Comment">
+        -->
+
+    </div>
+
+    <div id='container' style="margin-left: 25%; margin-top: 32px; margin-bottom: 5%;"></div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+
+
+
+
+    <font>
+
+
+
+
+
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="left-col">
+                    <h2 class="my-md-3 site-title">nuance</h2>
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                    <p class="rights-text">© All rights reserved</p>
+                </div>
+                <div class="right-col">
+                    <h1>Join Our Newsletter</h1>
+                    <div class="border"></div>
+                    <p>Enter Your Email to get our news and updates</p>
+                    <form action="" class=newsletter-form>
+                        <input type="text" class="txtb" placeholder="Enter Your Email">
+                        <input type="submit" class="submit-btn" value="submit">
+                    </form>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossori
+
+</body>
+</html>

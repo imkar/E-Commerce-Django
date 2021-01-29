@@ -1,0 +1,676 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Manager</title>
+</head>
+<body>
+
+<!-- Bootstrap CDN-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<!--Slick CDN-->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<!--Custom Style Sheet-->
+<!--<link rel="stylesheet" href="./ProductLogin.css">-->
+<link rel="stylesheet" href="{% static 'product_style/ProductM' %}">
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<!-- Font Awesome CDN-->
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+
+<!--Custom Style Sheet-->
+<link rel="stylesheet" href="{% static 'header_footer/last_header.css' %}">
+
+<!--Custom Style Sheet-->
+<link rel="stylesheet" href="{% static 'header_footer/footer.css' %}">
+
+
+<script type="text/javascript">
+
+    function toggle_visibility(id) {
+        var e = document.getElementById(id);
+        if(e.style.display == 'block')
+            e.style.display = 'none';
+        else
+            e.style.display = 'block';
+    }
+
+</script>
+
+
+
+<header>
+    <div class="container-fluid">
+
+        <div class="row header-row">
+            <div class="col-md-4 col-2 text-left">
+                <h2 class="my-md-3 site-title">nuance</h2>
+            </div>
+
+            <div class="search-container col-8 col-md-4">
+                <div class="search-box">
+                    <div class="search-icon"><i class="fa fa-search search-icon fa-sm"></i></div>
+                    <form action="" class="search-form">
+                        <input type="text" placeholder="Search" id="search" autocomplete="off">
+                    </form>
+                    <svg class="search-border" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;"
+                         xml:space="preserve">
+                      <path class="border" d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"/>
+                        <path class="border" d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"/>
+                    </svg>
+                    <div class="go-icon"><i class="fa fa-arrow-right fa-sm"></i></div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-2 float-left head-rightContent">
+
+
+                <div class= "right-col">
+
+                    <ul class=icons>
+
+
+                        <li class="shopping-basket lie">
+
+                            <a href="javascript:void(0)" onclick="toggle_visibility('shopping-popup');">
+                                <i class="fas fa-shopping-cart fa-lg"></i>
+                            </a>
+                        </li>
+
+
+                        <li class="profil" tabindex="0">
+
+                            <div class="user_section" id="user">
+                                <a href="">
+                                    <i class="far fa-user fa-lg"></i>
+                                </a>
+
+                            </div>
+                            <div class="user_container">
+                                <div class="user_info col-4 col-md-4 offset-md-">
+
+                                    <h3>Begüm Çelik</h3>
+
+                                    <p><a href="#">Your Account</a></p>
+                                    <p><a href="#">Previous Orders</a></p>
+                                    <p><a href="#">Logout</a></p>
+
+
+                                </div>
+                            </div>
+
+
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle my-md-4 my-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD</button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">EUR</a>
+                        <a href="#" class="dropdown-item">TL</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="container-fluid">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="#">SKIN CARE</a>
+                <div class="dropdown-content">
+                    <a href="#">Skin Care Sets</a>
+                    <a href="#">Facial Moistruizers</a>
+                    <a href="#">Eye Creams</a>
+                    <a href="#">Face Tonics</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">BODY CARE</a>
+                <div class="dropdown-content">
+                    <a href="#">Body Care Sets</a>
+                    <a href="#">Body Washes</a>
+                    <a href="#">Body Scrubs</a>
+                    <a href="#">Natural Deodorants</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">HAIR CARE</a>
+                <div class="dropdown-content">
+                    <a href="#">Hair Care Sets</a>
+                    <a href="#">Hair Sprays</a>
+                    <a href="#">Hair Masks</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">SALE</a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<div id="shopping-popup" class="bg-modal wrapper">
+    <div class="container modal-content">
+        <div class="closing">
+            <a href="javascript:void(0)" onclick="toggle_visibility('shopping-popup');">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+        <h3>SHOPPING CART</h3>
+
+        <div class="row item-row">
+            <div class="buttons">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <div class="productimage">
+                <img class="productimage" src="./images/Banner/Cilt Bakımı/face tonic02.jpg" alt="" />
+            </div>
+
+            <div class="description">
+                <span>Common Projects</span></br>
+                <span>Bball High</span></br>
+
+            </div>
+
+            <div class="quantity">
+                <div class="row q-row">
+                    <i class="fas fa-plus"></i>
+                    <p class=quant>1</p>
+                    <i class="fas fa-minus"></i>
+
+                </div>
+            </div>
+
+            <div class="price">
+                <p class="total-price">$549</p>
+            </div>
+        </div>
+        <hr style="width:400px; margin: auto;"></hr>
+        <div class="row item-row">
+            <div class="buttons">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <div class="productimage">
+                <img class="productimage" src="./images/Banner/Cilt Bakımı/face tonic02.jpg" alt="" />
+            </div>
+
+            <div class="description">
+                <span>Common Projects</span></br>
+                <span>Bball High</span></br>
+
+            </div>
+
+            <div class="quantity">
+                <div class="row q-row">
+                    <i class="fas fa-plus"></i>
+                    <p class=quant>1</p>
+                    <i class="fas fa-minus"></i>
+
+                </div>
+            </div>
+
+            <div class="price">
+                <p class="total-price">$549</p>
+            </div>
+        </div>
+
+        <h5>Total Price</h5>
+        <h6>$549</h6>
+
+        <!--
+        <div class="empty-card">
+          <p>YOUR SHOPPING CART IS EMPTY</p>
+        </div>
+        -->
+        <i class="fas fa-shopping-cart"></i>
+
+    </div>
+
+</div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="jquery.js"></script>
+<script src="./js/header.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<style>
+    .sidebar {
+        display: none;
+    }
+    @media (min-width: 768px) {
+        .sidebar {
+            position: fixed;
+            top: 101px;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            display: block;
+            padding: 20px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: white;
+            border: none;
+            width: 180px;
+        }
+    }
+
+    .nav-sidebar a {
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-top: 50px;
+        color: black;
+    }
+
+</style>
+
+
+
+<div class="sidebar">
+    <div class="nav nav-sidebar">
+
+    </div>
+</div>
+-->
+
+<div class="row" style="background: white;">
+
+    <style>
+        .close1 {
+            color: #aaaaaa;
+            float: right;
+            margin-right: 10px;
+            margin-top: 2px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close1:hover,
+        .close1:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+    </script>
+
+    <table style="margin-left: 275px; margin-top: 10px;">
+        <tr>
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+
+
+        <tr>
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="product.jpg" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">Strawberry Face Tonic</p>
+                                <p>Price: $37.99 </p>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+</div>
+
+
+<footer>
+    <div class="footer-container">
+        <div class="left-col">
+            <h2 class="my-md-3 site-title">nuance</h2>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+            </div>
+            <p class="rights-text">© All rights reserved</p>
+        </div>
+        <div class="right-col">
+            <h1>Join Our Newsletter</h1>
+            <div class="border"></div>
+            <p>Enter Your Email to get our news and updates</p>
+            <form action="" class=newsletter-form>
+                <input type="text" class="txtb" placeholder="Enter Your Email">
+                <input type="submit" class="submit-btn" value="submit">
+            </form>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

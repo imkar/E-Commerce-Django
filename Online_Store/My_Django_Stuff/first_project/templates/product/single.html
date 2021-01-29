@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h5>{{ obj.slug }}</h5>
+    <h5>{{ obj.id }}</h5>
+    <h5>{{ obj.price }}</h5>
+    <h5>{{ obj.name }}</h5>
+    <h5><img src="{{ obj.image_of_product.url }}" style="width: 180px; height: 280px;"></h5>
+    <!-- <input class="form-control" type="number" name='qty' value='1'> -->
+
+    <form class="form"  method = 'POST' action='{% url "add_to_cart" obj.slug %}'>
+      <input type="hidden" name="product_id" value="{{ obj.id }}">  {% csrf_token %}
+     <input class="form-control" type="number" name='qty' value='1'>
+     <!-- <input type="submit" value="Add to cart"> -->
+     <button type="submit" class="fas fa-shopping-cart fa-2x" value='Add to cart'></button>
+   </form>
+  </body>
+</html>

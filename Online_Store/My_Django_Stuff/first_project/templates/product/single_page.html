@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuance</title>
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Font Awesome CDN-->
+     <!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+
+    <!--Slick CDN-->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <!--Custom Style Sheet-->
+    <link rel="stylesheet" href="{% static 'product_style/single_page.css' %}">
+
+
+</head>
+<body>
+
+{% include 'last_header.html'%}
+    <main>
+
+
+
+        <div class="product-container container">
+            <div class="row product-row">
+            <!-- Left Column / Headphones Image -->
+            <div class="left-column offset-md-1 col-6 col-md-6 ">
+                <img class="p-image" data-image="product-image" src="{{ obj.image_of_product.url }}" alt="" style="max-width:100%;height:auto;">
+            </div>
+
+
+            <!-- Right Column -->
+            <div class="right-column col-5 col-md-5">
+
+                <!-- Product Description -->
+                <div class="product-description">
+                <span>{{ obj.title }}</span>
+                <h1>{{ obj.name }}</h1>
+                <p>{{ obj.description }}</p>
+                </div>
+
+                <form class="form" action='{% url "add_to_cart" obj.slug %}' method="post" id="my_form">{% csrf_token %}
+                <!-- Product Pricing -->
+                <div class="product-price">
+                <span>{{ obj.price }}$</span>
+                <input style="width:100px" class="form-control" type="number" name='qty' value='1'>
+                <br> <a class="add fas fa-shopping-cart fa-lg" type = 'submit' value='Add to cart' onclick="document.getElementById('my_form').submit();" ></a>
+                </form>
+                </div>
+                <br>
+                <div class="comments">
+
+
+                    <h3><strong>Comments</strong></h3>
+                    <br>
+                    {% for rs in comments%}
+                    <h5><strong>{{ rs.user }}</strong> &nbsp;&nbsp; <u>Rating :</u>  {{ rs.rate }}</h5>
+                    <h5>{{ rs.comment }}</h5>
+                    <br>
+
+                    {% endfor %}
+                    <!-- <h1>The textarea form attribute</h1> -->
+
+
+                    </div>
+                    <form class="review-form" action='{% url "add_comment" obj.slug %}' method="post">
+                      <div class="form-group">
+                        <input style="width:150px"type="text" class="input" name="subject" placeholder="Your review">
+                      </div>
+                      <div class="form-group">
+                        <textarea  style="width:250px;height:100px "name="comment" class="input" placeholder="Your review"></textarea>
+
+                      </div>
+                      <div class="form-group">
+                        <div class="input-rating">
+                          <strong class="text-uppercase">Your Rating</strong>
+                          <div class="stars">
+                            <input type="radio" id="star1" name="rate" value="1"><label for="star1"></label>
+                            <input type="radio" id="star2" name="rate" value="2"><label for="star2"></label>
+                            <input type="radio" id="star3" name="rate" value="3"><label for="star3"></label>
+                            <input type="radio" id="star4" name="rate" value="4"><label for="star4"></label>
+                            <input type="radio" id="star5" name="rate" value="5"><label for="star5"></label>
+                          </div>
+                        </div>
+
+                      </div>
+                      {% if user.is_authenticated %}
+                      {% csrf_token%}
+                      <button type="primary-tbn">Submit</button>
+                      {%else%}
+                        You must be logged in to post a review
+                      {% endif %}
+                    </form>
+
+
+                </div>
+
+            </div>
+            </div>
+
+
+
+
+    </main>
+
+{% include 'footer.html'%}
+
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

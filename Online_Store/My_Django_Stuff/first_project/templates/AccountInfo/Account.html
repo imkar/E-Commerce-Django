@@ -1,0 +1,284 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adresses</title>
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Font Awesome CDN-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+
+    <!--Custom Style Sheet-->
+    <link rel="stylesheet" href="{% static 'account_style/header.css' %}">
+
+    <script type="text/javascript">
+
+        function toggle_visibility(id) {
+            var e = document.getElementById(id);
+            if(e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
+        }
+
+    </script>
+
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Font Awesome CDN-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+
+    <!--Custom Style Sheet-->
+    <link rel="stylesheet" href="{% static 'account_style/footer.css' %}">
+
+</head>
+<body>
+
+  {% include 'last_header.html'%}
+
+<!-- <div id="shopping-popup" class="bg-modal wrapper">
+    <div class="container modal-content">
+        <div class="closing">
+            <a href="javascript:void(0)" onclick="toggle_visibility('shopping-popup');">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+        <h3>SHOPPING CART</h3>
+        {% for item in cart.cartitem_set.all %}
+        <div class="row item-row">
+            <div class="buttons">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <div class="productimage">
+                <img class="productimage" src="{{ item.product.image_of_product.url }}" alt="" />
+            </div>
+
+            <div class="description">
+                <span>{{ item.product.name}}</span></br>
+                <span>Bball High</span></br>
+
+           </div>
+
+            <div class="quantity">
+                <div class="row q-row">
+                    <i class="fas fa-plus"></i>
+                    <p class=quant>{{ item.quantity }}</p>
+                    <i class="fas fa-minus"></i>
+
+                </div>
+            </div>
+
+            <div class="price">
+                <p class="total-price">${{ item.line_total }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <hr style="width:400px; margin: auto;"></hr> -->
+        <!-- <div class="row item-row">
+            <div class="buttons">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <div class="productimage">
+                <img class="productimage" src="./images/Banner/Cilt Bakımı/face tonic02.jpg" alt="" />
+            </div>
+
+            <div class="description">
+                <span>Common Projects</span></br>
+                <span>Bball High</span></br>
+
+            </div>
+
+            <div class="quantity">
+                <div class="row q-row">
+                    <i class="fas fa-plus"></i>
+                    <p class=quant>1</p>
+                    <i class="fas fa-minus"></i>
+
+                </div>
+            </div>
+
+            <div class="price">
+                <p class="total-price">$549</p>
+            </div>
+        </div> -->
+
+        <!-- <h5>Total Price</h5>
+        <h6>$549</h6> -->
+
+        <!--
+        <div class="empty-card">
+          <p>YOUR SHOPPING CART IS EMPTY</p>
+        </div>
+        -->
+        <!-- <i class="fas fa-shopping-cart"></i>
+    </div>
+</div> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="jquery.js"></script>
+<script src="./js/header.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<style>
+    .address-form{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .submit-btn-adr{
+        padding: 10px 35px;
+        font-size: 16px;
+        color: var(--background-color);
+        border:none;
+        font-weight: 700;
+        background-color: var(--pink);
+        margin-left: 10px;
+    }
+    .submit-btn-adr:hover{
+        opacity: 0.7;
+    }
+</style>
+
+
+
+<font style="font-family: var(--opensans-condensed); font-size: 20px;">
+
+    <div class="container" style="width: auto; height: auto; margin-top: 50px;">
+
+        <h2>Personal Info</h2>
+        <div class="card" style="margin-bottom: 30px; width: 600px; margin-top: 50px;">
+            <div class="card-header" style="background-color: #f2e9e2;">
+                <h4>Profile</h4>
+            </div>
+            <div class="card-body">
+
+                    <table>
+                        <tr>
+                            <td>
+                                <a>Username</a>
+                            </td>
+                            <td>
+                                <a style="margin-left: 20px;">{{ user.username }}</a>
+                            </td>
+                        </tr>
+                        {% if user.first_name %}
+                        <tr>
+                            <td>
+                                <a>Name</a>
+                            </td>
+                            <td>
+                                <a style="margin-left: 20px;">{{ user.first_name }}</a>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td>
+                                <a>Name</a>
+                            </td>
+                            <td>
+                              <form class="" action="{% url 'update_name' %}" method="post">{% csrf_token %}
+                                <a style="margin-left: 20px;"><input placeholder="Update your name ..." type="text" id="fname" name="name_inp"><input  type="submit" value="Update"></a>
+                              </form>
+                            </td>
+                        </tr>
+
+                        {% endif %}
+                        {% if user.last_name %}
+                        <tr>
+                            <td>
+                                <a>Surname</a>
+                            </td>
+                            <td>
+                                <a style="margin-left: 20px;">{{ user.last_name }}</a>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td>
+                                <a>Surname</a>
+                            </td>
+                            <td>
+                              <form class="" action="{% url 'update_surname' %}" method="post">{% csrf_token %}
+                                <a style="margin-left: 20px;"><input placeholder="Update your surname ..." type="text" id="fname" name="last_name_inp"><input  type="submit" value="Update"></a>
+                              </form>
+                            </td>
+                        </tr>
+                        {% endif %}
+                    </table>
+            </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 50px; width: 600px;">
+            <div class="card-header" style="background-color: #f2e9e2;">
+                <h4>Contact Info</h4>
+            </div>
+            <div class="card-body">
+
+                <table>
+                    <tr>
+                        <td>
+                            <a>Email</a>
+                        </td>
+                        <td>
+                            <a style="margin-left: 60px;">{{ user.email }}</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <font>
+
+
+
+
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="left-col">
+                    <h2 class="my-md-3 site-title">nuance</h2>
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                    <p class="rights-text">© All rights reserved</p>
+                </div>
+                <div class="right-col">
+                    <h1>Join Our Newsletter</h1>
+                    <div class="border"></div>
+                    <p>Enter Your Email to get our news and updates</p>
+                    <form action="" class=newsletter-form>
+                        <input type="text" class="txtb" placeholder="Enter Your Email">
+                        <input type="submit" class="submit-btn" value="submit">
+                    </form>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorin="anonymous"></script>
+
+</body>
+</html>

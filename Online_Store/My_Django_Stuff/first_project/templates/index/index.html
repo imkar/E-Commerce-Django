@@ -1,0 +1,381 @@
+{% load static %}
+
+{% if user.groups.first.name == 'product_managers' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Manager</title>
+</head>
+<body>
+<!-- Bootstrap CDN-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<!-- Font Awesome CDN-->
+<script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+
+<!--Slick CDN-->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<!--Custom Style Sheet-->
+<link rel="stylesheet" href="{% static 'product_style/ProductLogin.css' %}">
+<link rel="stylesheet" href="{% static 'product_style/ProductM.css' %}">
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+{% include 'managers/last_manager.html'%}
+<!-- <header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-12 text-left">
+                <h2 class="my-md-3 site-title">nuance</h2>
+            </div>
+
+            <div class="col-md-4 col-12 offset-md-4  head-rightContent">
+                <div>
+                    <ul class=icons>
+                        <li class="search-icon">
+                            <i class="fas fa-search fa-lg"></i>
+                        </li>
+
+                        {% if user.is_authenticated %}
+                        <li class="profil" tabindex="0">
+
+                          <div class="user_section" id="user">
+                            <a href="">
+                            <i class="far fa-user fa-lg"></i>
+                          </a>
+
+                          </div>
+                          <div class="user_container">
+                            <div class="user_info col-4 col-md-4 offset-md-">
+
+                              <h3>{{ user.username }}</h3>
+
+                              <p><a href="#">Your Account</a></p>
+                              <p><a href="#">Addresses</a></p>
+                              <p><a href="#">Previ  ous Orders</a></p>
+                              <p><a href="{% url 'logout' %}">Logout, {{ user.username }}</a></p>
+                            {% else %}
+                            <li class="profil">
+                              <div class="user_section" id="user">
+                                <i onclick="location.href='{% url 'user_login' %}';"  style="cursor:pointer;" class="far fa-user fa-lg"></i>
+                                </div>
+                            </li>
+
+
+                          </div>
+                        </div>
+
+
+
+                      </li>
+                      {% endif %}
+
+
+
+                        <!-- {% if user.is_authenticated %}
+                        <li class="profil">
+                            <i class="far fa-user fa-lg"></i>
+                        </li>
+                        {% endif %} -->
+                        <!-- <li class="shopping-basket lie">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <style>
+                    /* The Modal (background) */
+                    .modal {
+                        display: none; /* Hidden by default */
+                        position: fixed; /* Stay in place */
+                        /* Sit on top */
+                        padding-top: 300px; /* Location of the box */
+                        padding-left: 150px;
+                        top: 0;
+                        width: 100%; /* Full width */
+                        height: 100%; /* Full height */
+                        overflow: auto; /* Enable scroll if needed */
+                        background-color: rgb(0,0,0); /* Fallback color */
+                        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                    }
+
+                    /* Modal Content */
+                    .modal-content {
+                        background-color: #fefefe;
+                        margin: auto;
+                        padding: 20px;
+                        border: 1px solid #888;
+                        width: 30%;
+                    }
+
+                    /* The Close Button */
+                    .close {
+                        color: #aaaaaa;
+                        float: right;
+                        font-size: 28px;
+                        font-weight: bold;
+                    } -->
+
+                    <!-- /* .close:hover,
+                    .close:focus {
+                        color: #000;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                </style>
+
+                <button class="myBtn" id="myBtn">Add Item</button>
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                <!--    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form method="POST" class="newsletter-form" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="file"  accept="image/*" name="uploaded_image" id="file"  onchange="loadFile(event)" style="display: none;">
+                            <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+                            <div class="flip-card" style="margin-left: 90px;">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <p><img id="output" style="width: 180px; height: 280px;"></p>
+                                        <script>
+                                            var loadFile = function(event) {
+                                                var image = document.getElementById('output');
+                                                image.src = URL.createObjectURL(event.target.files[0]);
+                                            };
+                                        </script>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="back-header">
+                                        </div>
+                                        <div class="back-footer">
+                                            <label style="font-size: 15px; margin-top: 30px;">Header:</label>
+                                            <input name="name" style="color: black;" type="text" size="15">
+                                            <label style="font-size: 15px; margin-top: 20px;">Price:</label>
+                                            <input name="price" style="color: black;" type="text" size="15" style="margin-left: 14px;">
+                                            <label style="font-size: 15px; margin-top: 20px;">Items in Stock:</label>
+                                            <input name="stock" style="color: black;"  type="text" style="font-size: 10px;">
+                                            <label style="font-size: 15px; margin-top: 10px;">Information:</label>
+                                            <input name="info" style="color: black;"  type="text" style="font-size: 20px;">
+                                            <center>
+                                                <input type="submit" class="submit-btn" value="Save" style="margin-top: 10px;">
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById("myModal");
+
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("myBtn");
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks the button, open the modal
+                    btn.onclick = function() {
+                        modal.style.display = "block";
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+
+
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle my-md-4 my-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD</button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">EUR</a>
+                        <a href="#" class="dropdown-item">TL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> -->
+
+<style>
+    .sidebar {
+        display: none;
+    }
+    @media (min-width: 768px) {
+        .sidebar {
+            position: fixed;
+            top: 101px;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            display: block;
+            padding: 20px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: white;
+            border: none;
+            width: 180px;
+        }
+    }
+
+    .nav-sidebar a {
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-top: 50px;
+        color: black;
+    }
+
+</style>
+
+
+
+<div class="sidebar">
+    <div class="nav nav-sidebar">
+        <a href="#">Skin Care</a>
+        <a href="#">Cream</a>
+        <a href="#">Tonic</a>
+        <a href="#">Face Set</a>
+    </div>
+</div>
+
+<div class="row" style="background: white;">
+    <table style="margin-left: 225px; margin-top: 10px;">
+        {% for product in products %}
+        {% if forloop.counter0|divisibleby:5 %}
+        <tr>
+        {% endif %}
+            <td style="padding-right: 10px; padding-bottom: 20px;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ product.image_of_product.url }}" style="width: 180px; height: 280px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="back-header">
+                            </div>
+                            <div class="back-footer">
+                                <p style="margin-top: 20px;">{{ product.name }}</p>
+                                <p>Price: ${{ product.price }} </p>
+                                <form method="POST" class=newsletter-form>
+                                    {% csrf_token %}
+                                    <label style="font-size: 15px;">Items in Stock:</label>
+                                    <input style="color:black;" name="stock" type="text" size="15" value="{{ product.quantity_instocks }}">
+                                    <input name="id" type="hidden" value="{{ product.id }}"
+                                    <center>
+                                        <input type="submit" class="submit-btn" value="Save" style="margin-top: 30px;">
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        {% if forloop.counter|divisibleby:5 %}
+        </tr>
+        {% endif %}
+        {% endfor %}
+
+    </table>
+</div>
+</body>
+</html>
+
+{% else %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuance</title>
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Font Awesome CDN-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+
+    <!--Slick CDN-->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <!--Custom Style Sheet-->
+    <link rel="stylesheet" href="{% static 'index/style.css' %}">
+
+
+</head>
+<body>
+    {% include 'last_header.html'%}
+    <main>
+        <div class="container hide">
+            <div class="site-slider">
+                <div class="slider-one">
+                    <div><img onclick="location.href='{% url 'products' %}';"  style="cursor:pointer;" src="{% static 'index/banner1.jpg' %}" class="img-fluid" alt="Banner 1"></div>
+                    <div><img src="{% static 'index/banner2.jpg' %}" class="img-fluid" alt="Banner 2"></div>
+                    <div><img src="{% static 'index/banner3.jpg' %}" class="img-fluid" alt="Banner 3"></div>
+                </div>
+                <div class="slider-btn">
+                    <span class="prev position-top left-0"><i class="fas fa-chevron-left"></i></span>
+                    <span class="next position-top right-0"><i class="fas fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+            <footer>
+                <div class="footer-container">
+                    <div class="left-col">
+                        <h2 class="my-md-3 site-title">nuance</h2>
+                        <div class="social-media">
+                            <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        </div>
+                        <p class="rights-text">© All rights reserved</p>
+                    </div>
+                    <div class="right-col">
+                        <h1>Join Our Newsletter</h1>
+                        <div class="border"></div>
+                        <p>Enter Your Email to get our news and updates</p>
+                        <form action="" class=newsletter-form>
+                            <input type="text" class="txtb" placeholder="Enter Your Email">
+                            <input type="submit" class="submit-btn" value="submit">
+                        </form>
+                    </div>
+                </div>
+            </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="{% static 'index/main.js' %}"></script>
+
+</body>
+</html>
+{% endif %}

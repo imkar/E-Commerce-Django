@@ -1,0 +1,4 @@
+{% if request.GET.q %}
+<h1>Results for {{ request.GET.q }}</h1>
+{% endif %}
+{% include 'product/ProductCard.html' %}

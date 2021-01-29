@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300&display=swap');
+
+:root{
+    --pink: #cba6a6 ;
+    --yellow: #d2c5a1;
+    --orange: #deb597 ;
+    --blue: #a9bbc9 ;
+    --green: #b9c9a9 ;
+    --background-color: #f2e9e2 ;
+    --opensans-condensed: 'Open Sans Condensed', sans-serif ;
+    --opensans: 'Open Sans', sans-serif;
+}
+
+header{
+    font-family: var(--opensans-condensed);
+    vertical-align: baseline;
+}
+
+.row{
+    background-color: var(--background-color);
+
+}
+
+.site-title{
+    font-size: 3em;
+    letter-spacing : 0.2em;
+    color:white;
+}
+.icons{
+    padding-top: 2rem;
+}
+
+ul{
+    margin:0;
+    color: white;
+}
+
+li{
+    list-style: none;
+    float: right;
+    padding: 0.7em;
+}
+
+.btn-group{
+    padding-top: 0.7rem;
+    float: right;
+}
+
+.container.dropdown-toggle,
+.container.dropdown-item{
+    font-size: 0.5em;
+}
+
+.nav-item{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.nav-link{
+    font-size: 1.2em;
+    letter-spacing : 0.1em;
+    color: var(--pink);
+}
+
+
+.site-slider{
+    position:relative;
+}
+
+.position-top{
+    position: absolute;
+    top: 45%;
+}
+
+.prev,.next{
+    background-color: var(--background-color) ;
+    padding: 1rem 1.5rem;
+    border-radius: 50%;
+    color:white;
+    margin: 0 1rem;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.site-slider:hover .prev,.site-slider:hover .next{
+    opacity: 1;
+}
+
+.left-0{
+    left:0;
+}
+
+.right-0{
+    right: 0 ;
+}
+
+.slick-dots{
+    list-style: none;
+    display: flex;
+    justify-content:center;
+    margin: 0;
+    padding: 1rem 0;
+    position: absolute;
+    bottom:0;
+    right: 45%;
+
+}
+
+.slick-dots li{
+    margin: 0 0.rem;
+}
+
+.slick-dots button{
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    padding: 0;
+    border: none;
+    background-color: var(--background-color);
+    text-indent: -99999px;
+    border-radius: 100%;
+}
+
+.slick-dots li.slick-active button{
+    transform: scale(2.5);
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.205);
+}

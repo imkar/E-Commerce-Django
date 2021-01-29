@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300&display=swap');
+
+:root{
+    --pink: #cba6a6 ;
+    --yellow: #d2c5a1;
+    --orange: #deb597 ;
+    --blue: #a9bbc9 ;
+    --green: #b9c9a9 ;
+    --background-color: #f2e9e2 ;
+    --opensans-condensed: 'Open Sans Condensed', serif ;
+    --opensans: 'Open Sans', sans-serif;
+}
+.site-title{
+    font-family: var(--opensans-condensed);
+    font-size: 2.5em;
+    letter-spacing : 0.2em;
+    color:white;
+}
+.fullTable{
+    font-family: var(--opensans-condensed);
+    background-color:var(--background-color);
+}
+
+

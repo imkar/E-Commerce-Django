@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300&display=swap');
+
+:root{
+    --pink: #cba6a6 ;
+    --yellow: #d2c5a1;
+    --orange: #deb597 ;
+    --blue: #a9bbc9 ;
+    --green: #b9c9a9 ;
+    --background-color: #f2e9e2 ;
+    --opensans-condensed: 'Open Sans Condensed', sans-serif ;
+    --opensans: 'Open Sans', sans-serif;
+}
+
+
+
+
+  /*main*/
+
+  
+.product-row{
+    background-color: white;
+    padding: 1em;
+    font-family: var(--opensans-condensed);
+}
+
+.product-price{
+    font-size: 1.5em;
+    
+}
+.add{
+    padding-top: 1em;
+    color:var(--pink);
+    
+}
+.comments{
+    padding-top: 2em;
+}
+.comments p{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}

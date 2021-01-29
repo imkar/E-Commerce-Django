@@ -1,0 +1,28 @@
+<form name = "submission" method="post">
+  {%csrf_token%}
+<h3>If you do not have an address, please fill the address field</h3>
+<div class="form-group md-form">
+    <label for="companyName" data-error="wrong" data-success="right">Name for the Address</label>
+    <input name="companyName" type="text"  class="form-control validate">
+    <!-- {{ form.address_name }} -->
+</div>
+<div class="form-group md-form mt-4">
+  <label for="companyAddress" data-error="wrong" data-success="right">Shipping Address</label>
+  <!-- {{ form.address_1 }} -->
+  <input name="companyAddress" type="text"  class="form-control validate">
+</div>
+<h3>If you already have saved address, please select an option </h3>
+<div class="form-group md-form mt-4" >
+
+
+  <select style="width:500px;" name="cars" id="cars">
+    <option  value="None">None</option>
+    {% for adri in adr %}
+    <option  value="{{ adri.address_name}}">{{ adri.address_name}}</option>
+    {% endfor %}
+  </select>
+
+
+</div>
+    <button name = 'submission' type="submit" class="btn step-button-active btn-rounded nextBtn float-right" type="button">Next</button>
+</form>

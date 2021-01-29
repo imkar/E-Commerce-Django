@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="{% static 'images/mini_icon.png' %}">
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Font Awesome CDN-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+
+     <!--Custom Style Sheet-->
+     <link rel="stylesheet" href="{% static 'header_footer/header.css'%}">
+
+</head>
+<body>
+
+    <header>
+        <div class="container-fluid">
+            <div class="row header-row">
+                <div class="col-md-4 col-12 text-left">
+                    <h2 onclick="location.href='{% url 'index' %}';"  style="cursor:pointer;" class="my-md-3 site-title">nuance</h2>
+
+                </div>
+
+                <div class="col-md-4 col-12 offset-md-4  head-rightContent">
+                    <div>
+                        <ul class=icons>
+
+                            <li class="profil">
+                                <i onclick="location.href='{% url 'user_login' %}';"  style="cursor:pointer;" class="far fa-user fa-lg"></i>
+                            </li>
+                            <li class="shopping-basket lie">
+                                <i onclick="location.href='{% url 'cart' %}';"  style="cursor:pointer;" class="fas fa-shopping-cart fa-lg"></i>
+                            </li>
+                            <li class="search-icon">
+                              <i class="fas fa-search fa-lg"></i>
+                          </li>
+                          {% if user.is_authenticated %}
+                          <li>
+                              <a href="{% url 'logout' %}">Logout,{{ user.username }}</a>
+                          </li>
+                          {% endif %}
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn dropdown-toggle my-md-4 my-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD</button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">EUR</a>
+                            <a href="#" class="dropdown-item">TL</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'skincare'%}">SKIN CARE</a>
+                  <div class="dropdown-content">
+                    <a href="#">Skin Care Sets</a>
+                    <a href="#">Facial Moistruizers</a>
+                    <a href="#">Eye Creams</a>
+                    <a href="#">Face Tonics</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'bodycare'%}">BODY CARE</a>
+                  <div class="dropdown-content">
+                    <a href="#">Body Care Sets</a>
+                    <a href="#">Body Washes</a>
+                    <a href="#">Body Scrubs</a>
+                    <a href="#">Natural Deodorants</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'haircare' %}">HAIR CARE</a>
+                  <div class="dropdown-content">
+                    <a href="#">Hair Care Sets</a>
+                    <a href="#">Hair Sprays</a>
+                    <a href="#">Hair Masks</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">SALE</a>
+                </li>
+              </ul>
+        </div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+
+</html>

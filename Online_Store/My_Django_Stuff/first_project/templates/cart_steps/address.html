@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--For header and footer only remove later-->
+    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/css/mdb.min.css" rel="stylesheet">
+        <!-- MDBootstrap Steppers Pro  -->
+    <!-- <link href="css/addons-pro/steppers.min.css" rel="stylesheet"> -->
+    <!--Custom Style Sheet-->
+    <link rel="stylesheet" href="{% static 'cart_steps/address.css' %}">
+
+
+
+
+
+</head>
+<body>
+
+  {% include 'last_header.html'%}
+
+    <main>
+    <!-- Steps form -->
+    <div class="card hide">
+        <div class="card-body mb-4">
+
+            <!-- Stepper -->
+            <div class="steps-form col-md-8 offset-md-2">
+                <div class="steps-row setup-panel">
+                    <div class="steps-step">
+                        <a href="#step-9" type="button" class="btn step-button btn-circle"><i class="fas fa-shopping-cart"></i></a>
+
+                    </div>
+                    <div class="steps-step">
+                        <a href="#step-10" type="button" class="btn step-button-active btn-circle" disabled="disabled"><i class="fas fa-dolly-flatbed"></i></a>
+
+                    </div>
+                    <div class="steps-step">
+                        <a href="#step-11" type="button" class="btn step-button btn-circle" disabled="disabled"><i class="fas fa-credit-card"></i></a>
+
+                    </div>
+                    <div class="steps-step">
+                        <a href="#step-12" type="button" class="btn step-button btn-circle" disabled="disabled"><i class="fas fa-credit-card"></i></a>
+
+                    </div>
+                </div>
+            </div>
+
+            <form role="form" action="" method="post">
+
+                <!-- Second Step -->
+                <div class="row setup-content" id="step-10">
+                    <div class="second-step col-md-6 offset-md-3">
+                        <h3 class="pl-0 my-5">ADDRESS</h3>
+                        <!-- <div class="form-group md-form">
+                            <label for="companyName" data-error="wrong" data-success="right">Company Name</label>
+                            <input id="companyName" type="text" required="required" class="form-control validate">
+                        </div>
+                        <div class="form-group md-form mt-3">
+                            <label for="companyAddress" data-error="wrong" data-success="right">Company Address</label>
+                            <input id="companyAddress" type="text" required="required" class="form-control validate">
+                        </div> -->
+                         {% include 'address/address_form.html' with form=address_form %}
+
+                        <button class="btn step-button-active btn-rounded prevBtn float-left" type="button">Previous</button>
+                        <!-- <button class="btn step-button-active btn-rounded nextBtn float-right" type="button">Next</button> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
+    <!-- Steps form -->
+    </main>
+
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/js/mdb.min.js"></script>
+    <!-- MDBootstrap Steppers Pro  -->
+    <!-- <script type="text/javascript" src="js/addons-pro/steppers.min.js"></script> -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-modal/1.6.5/index.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
+      {% include 'footer.html'%}
+</body>
+</html>
