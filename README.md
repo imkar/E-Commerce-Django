@@ -39,4 +39,4 @@ Here are some screenshots taken from the website below.
 
 
 ### Requirements to Install
-
+For installing requirements, please check requirements.txt
