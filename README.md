@@ -11,7 +11,6 @@ All the product images on the project are unreal.
 - History of the orders: Previous orders of the users can be seen in the user profile.
 - Searchbar through every product.
 
-In order to run in LocalHost, Install these requirements:
 
 
 Here are some screenshots taken from the website below.
